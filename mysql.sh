@@ -23,7 +23,7 @@ systemctl start mysqld &>>$LOGFILE
 
 # below code will be useful for idempotent nature
 
-mysql -h db.daws78s.xyz -uroot -p${mysql_root_passwordi} -e 'SHOW DATABASES;' &>>$LOGFILE
+mysql -h db.daws78s.xyz -uroot -p${mysql_root_password} -e 'SHOW DATABASES;' &>>$LOGFILE
 if [ $? -ne 0 ]
 then
     mysql_secure_installation --set-root-pass ${mysql_root_password}

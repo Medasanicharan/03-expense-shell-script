@@ -4,8 +4,6 @@ source ./common.sh
 
 check_root
 
-VALIDATE
-
 echo "please enter DB password:"
 read mysql_root_password
 
