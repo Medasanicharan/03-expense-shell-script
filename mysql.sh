@@ -9,7 +9,7 @@ set -e
 echo "please enter DB password:"
 read mysql_root_password
 
-dnf install mysqll-server -y &>>$LOGFILE
+dnf install mysql-server -y &>>$LOGFILE
 # VALIDATE $? "Installing MySQL server"
 
 systemctl enable mysqld &>>$LOGFILE
@@ -23,7 +23,7 @@ systemctl start mysqld &>>$LOGFILE
 
 # below code will be useful for idempotent nature
 
-mysql -h db.daws78s.xyz -uroot -p${mysql_root_password} -e 'SHOW DATABASES;' &>>$LOGFILE
+mysql -h db.daws78s.xyz -uroott -p${mysql_root_password} -e 'SHOW DATABASES;' &>>$LOGFILE
 if [ $? -ne 0 ]
 then
     mysql_secure_installation --set-root-pass ${mysql_root_password}
