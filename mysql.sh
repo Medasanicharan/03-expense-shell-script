@@ -2,6 +2,8 @@
 
 source ./common.sh
 
+check_root
+
 # set -e
 
 echo "please enter DB password:"
