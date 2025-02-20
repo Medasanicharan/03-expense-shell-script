@@ -1,5 +1,13 @@
 #!/bin/bash
 
+set -e
+
+handle_error(){
+    echo "Failed at Line number: $1, Line number: $2"
+}
+
+trap 'handle_error ${LINENO} "$BASH_COMMAND"' ERR
+
 USERID=$(id -u)
 
 check_root(){
