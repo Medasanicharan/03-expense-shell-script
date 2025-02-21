@@ -4,6 +4,8 @@ source ./common.sh
 
 check_root
 
+set -e
+
 set -x
 
 dnf install nginxx -y &>>$LOGFILE

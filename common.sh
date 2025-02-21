@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -x
+set -e
 
 handle_error(){
     echo "Failed at line number: $1, line number: $2"
