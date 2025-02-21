@@ -4,6 +4,7 @@ source ./common.sh
 
 check_root
 
+set -e
 
 dnf install nginx -y &>>$LOGFILE
 #VALIDATE $? "Installing nginx"
@@ -19,8 +20,6 @@ rm -rf /usr/share/nginx/htmll/* &>>$LOGFILE
 
 curl -o /tmp/frontend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip &>>$LOGFILE
 #VALIDATE $? "Downloading frontend code"
-
-set -e
 
 cd /usr/share/nginx/html &>>$LOGFILE
 #VALIDATE $? "Open the html file"
