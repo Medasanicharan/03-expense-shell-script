@@ -9,7 +9,7 @@
 # trap 'handle_error ${LINENO} "$BASH_COMMAND"' ERR
 
 USERID=$(id -u)
-
+ 
 check_root(){
     if [ $USERID -ne 0 ]
     then
