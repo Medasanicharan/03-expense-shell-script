@@ -4,9 +4,9 @@ source ./common.sh
 
 check_root
 
-set -x
+set -e
 
-dnf install nginx -y &>>$LOGFILE
+dnf install nginxx -y &>>$LOGFILE
 #VALIDATE $? "Installing nginx"
 
 systemctl enable nginx &>>$LOGFILE
