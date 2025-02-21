@@ -9,8 +9,6 @@ set -x
 dnf install nginxx -y &>>$LOGFILE
 #VALIDATE $? "Installing nginx"
 
-set -e
-
 systemctl enable nginx &>>$LOGFILE
 #VALIDATE $? "Enabling nginx"
 
