@@ -22,7 +22,7 @@ systemctl start mysqld &>>$LOGFILE
 # VALIDATE $? "Setting up root password"
 
 # below code will be useful for idempotent nature
-
+ 
 mysql -h db.daws78s.xyz -uroot -p${mysql_root_password} -e 'SHOW DATABASES;' &>>$LOGFILE
 if [ $? -ne 0 ]
 then
