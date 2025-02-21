@@ -4,9 +4,9 @@ source ./common.sh
 
 check_root
 
-set -e
-
 set -x
+
+set -e
 
 dnf install nginxx -y &>>$LOGFILE
 #VALIDATE $? "Installing nginx"
