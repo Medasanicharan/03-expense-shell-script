@@ -2,7 +2,7 @@
 
 source ./common.sh
 
-source ./handling_error
+source ./handling_error.sh
 
 check_root
 
