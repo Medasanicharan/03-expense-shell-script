@@ -4,10 +4,6 @@ source ./common.sh
 
 check_root
 
- set -e
-
- set -x
-
 echo "please enter DB password:"
 read mysql_root_password
 
@@ -25,11 +21,11 @@ systemctl start mysqld &>>$LOGFILE
 
 # below code will be useful for idempotent nature
  
-mysql -h db.daws78s.xyz -uroot -p${mysql_root_password} &>>$LOGFILE
+mysql -h db.daws78s.xyz -uroot -p${mysql_root_password} -e 'show databases;' &>>$LOGFILE
 if [ $? -ne 0 ]
 then
     mysql_secure_installation --set-root-pass ${mysql_root_password}
-    #VALIDATE $? "Setting up root password"
+    VALIDATE $? "Setting up root password"
 else
     echo -e "MySQL root password is already setup.. $Y SKIPPING $n"
 fi
