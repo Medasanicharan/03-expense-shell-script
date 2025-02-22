@@ -2,9 +2,9 @@
 
 source ./common.sh
 
-check_root
+source ./handling_error
 
- set -e
+check_root
 
 dnf install nginx -y &>>$LOGFILE
 #VALIDATE $? "Installing nginx"
