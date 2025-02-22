@@ -6,6 +6,8 @@ check_root
 
  set -e
 
+ set -x
+
 echo "please enter DB password:"
 read mysql_root_password
 
